@@ -238,7 +238,7 @@ function Photos() {
   let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
 
   return (
-    <div className="mt-16 sm:mt-20">
+    <div className="mt-16 sm:mt-20 px-5">
       <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
         {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
           <div
@@ -268,11 +268,13 @@ export default async function Home() {
     <>
       <Container className="mt-9">
         <div className="max-w-2xl">
-          <h1 className="text-3xl font-bold text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Full Stack Web Developer, software engineer, film photographer, husband, and cat dad.
+          <h1 className="text-left text-3xl font-bold text-zinc-800 sm:text-5xl dark:text-zinc-100">
+            Full Stack Web Developer <br /> Software Engineer
+            <br /> Film Photographer
+            <br /> Husband <br /> and Cat Dad.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I'm Luke, a full stack web developer and 
+            I'm Luke, a full stack web developer and
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
@@ -290,7 +292,7 @@ export default async function Home() {
       </Container>
       <Photos />
       <Container className="mt-4 md:mt-8">
-          <ProjectsCTA />
+        <ProjectsCTA />
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <SkillContainer />
           {/* <div className="flex flex-col gap-16">
