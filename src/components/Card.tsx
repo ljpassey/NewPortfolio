@@ -26,7 +26,7 @@ export function Card<T extends React.ElementType = 'div'>({
 
   return (
     <Component
-      className={clsx(className, 'group relative flex flex-col items-start')}
+      className={clsx(className, 'group relative flex flex-col items-center')}
     >
       {children}
     </Component>
@@ -59,7 +59,7 @@ Card.Title = function CardTitle<T extends React.ElementType = 'h2'>({
   let Component = as ?? 'h2'
 
   return (
-    <Component className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+    <Component className="text-base font-semibold tracking-tight bg-zinc-100/50 text-zinc-800 dark:text-zinc-100">
       {href ? <Card.Link href={href}>{children}</Card.Link> : children}
     </Component>
   )
@@ -115,7 +115,7 @@ Card.Eyebrow = function CardEyebrow<T extends React.ElementType = 'p'>({
           className="absolute inset-y-0 left-0 flex items-center"
           aria-hidden="true"
         >
-          <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
+          <span className="h-4 w-0.5 rounded-full bg-zinc-100/50 dark:bg-zinc-500" />
         </span>
       )}
       {children}

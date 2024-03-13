@@ -41,6 +41,7 @@ export async function GET(req: Request) {
 
     let publicUrl = `${siteUrl}/articles/${id}`
     let article = $('article').first()
+    let embed = article.find('iframe').first().attr('src')
     let title = article.find('h1').first().text()
     let date = article.find('time').first().attr('datetime')
     let content = article.find('[data-mdx-content]').first().html()
@@ -54,10 +55,11 @@ export async function GET(req: Request) {
       id: publicUrl,
       link: publicUrl,
       content,
+      embed: embed ? `<iframe src="${embed}" />` : undefined,
       author: [author],
       contributor: [author],
       date: new Date(date),
-    })
+    } as any) // Add 'as any' to bypass type checking for 'embed' property
   }
 
   return new Response(feed.rss2(), {

@@ -18,6 +18,7 @@ import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 import SkillContainer from '@/components/SkillContainer'
 import { ProjectsCTA } from '@/components/ProjectsCTA'
+import Skills from '@/components/Skills'
 
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -78,20 +79,7 @@ function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-function Article({ article }: { article: ArticleWithSlug }) {
-  return (
-    <Card as="article">
-      <Card.Title href={`/articles/${article.slug}`}>
-        {article.title}
-      </Card.Title>
-      <Card.Eyebrow as="time" dateTime={article.date} decorate>
-        {formatDate(article.date)}
-      </Card.Eyebrow>
-      <Card.Description>{article.description}</Card.Description>
-      <Card.Cta>Read article</Card.Cta>
-    </Card>
-  )
-}
+
 
 function SocialLink({
   icon: Icon,
@@ -110,7 +98,7 @@ function Newsletter() {
   return (
     <form
       action="/thank-you"
-      className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
+      className="rounded-2xl bg-zinc-100/50 border shadow-lg dark:bg-zinc-800/50 border-zinc-100 p-6 dark:border-zinc-700/40"
     >
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <MailIcon className="h-6 w-6 flex-none" />
@@ -216,7 +204,7 @@ function Resume() {
   ]
 
   return (
-    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+    <div className="rounded-2xl bg-zinc-100/50 dark:bg-zinc-800/50 shadow-lg border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Work</span>
@@ -267,23 +255,31 @@ export default async function Home() {
   return (
     <>
       <Container className="mt-9">
-        <div className="max-w-2xl">
-          <h1 className="text-left text-3xl font-bold text-zinc-800 sm:text-5xl dark:text-zinc-100">
+        <div className="">
+          <h1 className="max-w-2xl text-left text-3xl font-bold text-zinc-800 sm:text-5xl dark:text-zinc-100">
             Full Stack Web Developer <br /> Software Engineer
             <br /> Film Photographer
             <br /> Husband <br /> and Cat Dad.
           </h1>
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I'm Luke, a full stack web developer and
+          <p className="mt-6 text-pretty text-base text-zinc-600 dark:text-zinc-400">
+            My name is Luke Passey and I am a full-stack software engineer/web
+            developer who specializes in both front-end web development
+            (JavaScript, React, HTML, CSS) and back-end development (SQL,
+            PostgreSQL, Node.js) and has experience working in Agile
+            environments (but I am comfortable with Waterfall, Lean, and Product
+            Driven Development methodologies), and am passionate about the
+            software development process! I am always striving to refine my
+            skills and write cleaner code, and creating thoughtful and elegant
+            solutions to problems through software is what makes me excited!
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="#"
+              href="https://github.com/ljpassey"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="#"
+              href="https://www.linkedin.com/in/luke-passey-full-stack-developer/"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
@@ -291,9 +287,9 @@ export default async function Home() {
         </div>
       </Container>
       <Photos />
-      <Container className="mt-4 md:mt-8">
+      <Container className=" mt-4 md:mt-8">
         <ProjectsCTA />
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
+        <div className=" grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <SkillContainer />
           {/* <div className="flex flex-col gap-16">
             {articles.map((article) => (

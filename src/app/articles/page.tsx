@@ -21,7 +21,8 @@ function Article({ article }: { article: ArticleWithSlug }) {
           {formatDate(article.date)}
         </Card.Eyebrow>
         <Card.Description>{article.description}</Card.Description>
-        <Card.Cta>Read article</Card.Cta>
+   
+        <Card.Cta>View Post</Card.Cta>
       </Card>
       <Card.Eyebrow
         as="time"

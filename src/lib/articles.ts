@@ -8,6 +8,7 @@ interface Article {
 }
 
 export interface ArticleWithSlug extends Article {
+
   slug: string
 }
 
