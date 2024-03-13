@@ -77,6 +77,36 @@ const backends = [
   },
 ]
 
+const tools = [
+  {
+    name: 'Visual Studio Code',
+  },
+  {
+    name: 'GitHub',
+  },
+  {
+    name: 'Jira',
+  },
+  {
+    name: 'AWS',
+  },
+  {
+    name: 'Prisma',
+  },
+  {
+    name: 'Figma',
+  },
+  {
+    name: 'Postman',
+  },
+  {
+    name: 'Salesforce',
+  },
+  {
+    name: 'Vercel',
+  },
+]
+
 export default function SkillContainer() {
   return (
     <div className="h-auto rounded-xl border border-zinc-100 bg-zinc-100/50 shadow-lg dark:border-zinc-700/50 dark:bg-zinc-800/50">
@@ -86,12 +116,8 @@ export default function SkillContainer() {
         className="mx-auto grid grid-cols-2 gap-5 p-2 sm:grid-cols-3"
       >
         {items.map((items) => (
-          <Card
-            as="li"
-            key={items.name}
-            className="rounded-lg bg-white p-3 dark:bg-zinc-800/50"
-          >
-            <h2 className="m-3  text-center text-base font-semibold text-zinc-800 dark:text-zinc-100">
+          <Card as="li" key={items.name} className="rounded-lg bg-white p-3 ">
+            <h2 className="m-3  text-center text-base font-semibold text-zinc-800 dark:text-zinc-800">
               <Card>{items.name}</Card>
             </h2>
           </Card>
@@ -108,9 +134,9 @@ export default function SkillContainer() {
           <Card
             as="li"
             key={frameworks.name}
-            className="rounded-lg bg-white p-3 dark:bg-zinc-800/50"
+            className="rounded-lg bg-white p-3 "
           >
-            <h2 className="m-3  text-center text-base font-semibold text-zinc-800 dark:text-zinc-100">
+            <h2 className="m-3  text-center text-base font-semibold text-zinc-800 dark:text-zinc-800">
               <Card>{frameworks.name}</Card>
             </h2>
           </Card>
@@ -127,29 +153,23 @@ export default function SkillContainer() {
           <Card
             as="li"
             key={backends.name}
-            className="rounded-lg bg-white p-3 dark:bg-zinc-800/50"
+            className="rounded-lg bg-white p-3 "
           >
-            <h2 className="m-3  text-center text-base font-semibold text-zinc-800 dark:text-zinc-100">
+            <h2 className="m-3  text-center text-base font-semibold text-zinc-800 dark:text-zinc-800">
               <Card>{backends.name}</Card>
             </h2>
           </Card>
         ))}
       </div>
-      <div className="m-3 text-center text-lg font-bold ">
-        Tools/Software
-      </div>
+      <div className="m-3 text-center text-lg font-bold ">Tools/Software</div>
       <div
         role="list"
         className="mx-auto grid grid-cols-2 gap-5 p-2 sm:grid-cols-3"
       >
-        {items.map((items) => (
-          <Card
-            as="li"
-            key={items.name}
-            className="rounded-lg bg-white p-3 dark:bg-zinc-800/50"
-          >
-            <h2 className="m-3  text-center text-base font-semibold text-zinc-800 dark:text-zinc-100">
-              <Card>{items.name}</Card>
+        {tools.map((tools) => (
+          <Card as="li" key={tools.name} className="rounded-lg bg-white p-3 ">
+            <h2 className="m-3  text-center text-base font-semibold text-zinc-800 dark:text-zinc-800">
+              <Card>{tools.name}</Card>
             </h2>
           </Card>
         ))}
